@@ -34,12 +34,16 @@ export const SideBar = ({drawerWidth}) => {
                 sx={{flexGrow: 0.1, display: 'flex', width: `50px`}}
                 justifyContent='space-between'
               >
-                <IconButton color="primary">
-                  <GitHub fontSize="large"/>  
-                </IconButton>
-                <IconButton color="primary">
-                  <LinkedIn fontSize="large"/>  
-                </IconButton>
+                <Link href='https://github.com/Astiaz' target='_blank' rel='noopener'>
+                  <IconButton color="primary" >
+                      <GitHub fontSize="large"/> 
+                  </IconButton>
+                </Link>
+                <Link href='https://www.linkedin.com/in/moralduke/' target='_blank' rel='noopener'>
+                  <IconButton color="primary" >
+                    <LinkedIn fontSize="large"/>  
+                  </IconButton>
+                </Link>
                 <IconButton color="primary">
                   <Instagram fontSize="large"/>  
                 </IconButton>
