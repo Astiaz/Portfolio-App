@@ -19,12 +19,12 @@ export const SideBar = ({drawerWidth}) => {
             <Grid container 
                   direction='column' 
                   alignItems='center' 
-                  sx={{display: 'flex', flexGrow: 1, paddingBottom: 4, paddingTop: 2}}
+                  sx={{display: 'flex', flexGrow: 1, paddingBottom: 4, paddingTop: 4}}
                   justifyContent='space-between'
             > 
               <Grid item>
                 <Link component={ RouterLink } underline='none' to='/' color='white'>
-                    <Typography variant="h4" noWrap component='div'>
+                    <Typography variant="h4" noWrap component='div' sx={{ writingMode: 'vertical-lr' }}>
                         Moralduke
                     </Typography>
                 </Link>
