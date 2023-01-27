@@ -1,4 +1,4 @@
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, NavLink } from "react-router-dom";
 import { AppBar, Box, Button, Grid, Link, Toolbar, Typography } from "@mui/material";
 import { Download } from "@mui/icons-material";
 
@@ -18,20 +18,44 @@ export const NavBar = ({drawerWidth = 240}) => {
         <Toolbar>
             <Box sx={{display:'flex', flexGrow: 1}} justifyContent='space-between'>
                 <Grid container direction='row' alignItems='center' spacing={4} sx={{paddingLeft: 4}}>
-                    <Grid item >
-                        <Link sx={{mr: 2}} color='tertiary.main' component={ RouterLink } underline='none' to='/'>
+                    <Grid item sx={{fontSize:20}}>
+                        <Link color='tertiary.main' component={ NavLink } underline='none' to='/'
+                            sx={{
+                                mr: 2,
+                                '&:hover':{color:'primary.second'}, 
+                                '&.active':{
+                                    color:'primary.main',
+                                },
+                            }} 
+                            >
                             Home
                         </Link>
 
-                        <Link sx={{mr: 2}} color='tertiary.main' component={ RouterLink } underline='none' to='/portfolio'>
+                        <Link color='tertiary.main' component={ NavLink } underline='none' to='/portfolio'
+                            sx={{
+                                mr: 2, 
+                                '&:hover':{color:'primary.second'}, 
+                                '&.active':{
+                                    color:'primary.main',
+                                },
+                            }} 
+                        >
                             Portfolio
                         </Link>
                         
-                        {/* <Link sx={{mr: 2}} color='tertiary.main' component={ RouterLink } underline='none' to='/about'>
+                        {/* <Link sx={{mr: 2}} color='tertiary.main' component={ NavLink } underline='none' to='/about'>
                             About Me
                         </Link> */}
                         
-                        <Link sx={{mr: 2}} color='tertiary.main' component={ RouterLink } underline='none' to='/contact'>
+                        <Link color='tertiary.main' component={ NavLink } underline='none' to='/contact'
+                            sx={{
+                                mr: 2, 
+                                '&:hover':{color:'primary.second'}, 
+                                '&.active':{
+                                    color:'primary.main',
+                                },
+                            }} 
+                        >
                             Contact
                         </Link>
                     </Grid>
