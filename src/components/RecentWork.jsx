@@ -16,7 +16,7 @@ export const RecentWork = () => {
             </Typography>
 
             <Grid container direction='column'>
-                <Grid item container className="animate__fadeInUp" spacing={2} xs={12} sm={8} sx={{marginBottom: 0, }}>
+                <Grid item container className="animate__fadeInUp" spacing={1} xs={12} sm={8} sx={{marginBottom: 0, }}>
                 {
                     allProjects.slice(-3).map( project => (
                         <ProjectPreview { ...project } key={project.title}/>
@@ -26,7 +26,7 @@ export const RecentWork = () => {
                 </Grid>
 
                 
-                <Link component={RouterLink} to='/portfolio' sx={{ fontSize: {xs: '20px', sm: '12'} }}>
+                <Link component={RouterLink} to='/portfolio' sx={{ fontSize: {xs: '20px', sm: '18px'} }}>
                     See more
                 </Link>
             </Grid>

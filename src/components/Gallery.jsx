@@ -6,7 +6,7 @@ export const Gallery = (images) => {
 
     const {image} = images;
     let defaultWidth = '100%';
-    let defaultHeight = '230px';
+    let defaultHeight = '190px';
 
     const width = window.innerWidth;
 

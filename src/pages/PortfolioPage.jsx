@@ -15,7 +15,7 @@ export const PortfolioPage = () => {
             container
             spacing={0}
             direction="column"
-            rowGap={{xs: 0, sm: 8}}
+            rowGap={{xs: 0, sm: 4}}
             sx={{
               minHeight: `calc(100vh - 120px)`,
               paddingLeft: {sx: 0, sm: 4}
@@ -35,7 +35,7 @@ export const PortfolioPage = () => {
               {
                 allProjects.map( project => (
                   <Grid item xs={12} sm={4} key={project.title}>
-                    <ProjectPreview { ...project } key={project.title} />
+                    <ProjectPreview { ...project } size="12" height="200px" key={project.title} />
                   </Grid>
                 ))
               }
