@@ -8,9 +8,12 @@ export const ContactPage = () => {
           direction='row'
           alignItems='center'
           justifyContent='space-around'
-          sx={{minHeight: `calc(100vh - 140px)`}}
+          sx={{
+            minHeight: `calc(100vh - 140px)`,
+            mt: { xs: 0, sm: 0}
+          }}
         >
-          <Grid item xs={5} container direction='column'>
+          <Grid item xs={12} sm={5} container direction='column'>
             <Typography variant='h5' component='p' mb={2}>Do u like my work? <Typography variant='p' component='span' color='primary.main'>contact me!</Typography></Typography>
             <TextField label='Name' variant='outlined' margin="dense"/>
             <TextField label='Email' variant='outlined' margin="dense"/>
@@ -20,7 +23,8 @@ export const ContactPage = () => {
           </Grid>
 
           <Box
-            xs={6}
+            xs={12}
+            sm={6}
             sx={{
               display: 'flex',
               flexDirection: 'column',

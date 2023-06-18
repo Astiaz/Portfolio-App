@@ -1,6 +1,10 @@
-import { projects } from "../data/projects";
+import { useSelector } from "react-redux";
 
-export const getProjectByName = ( name ) => {
-        
-    return projects.find( project => project.name === name);
+export const getProjectByName = ( title ) => {
+
+    const { allProjects } = useSelector(state => state.project);
+    
+    const projectFinded = allProjects.find( project => project.title === title);
+
+    return projectFinded;
 }

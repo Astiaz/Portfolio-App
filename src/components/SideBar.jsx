@@ -6,7 +6,12 @@ export const SideBar = ({drawerWidth}) => {
   return (
     <Box
         component='nav'
-        sx={{width: {sm: drawerWidth}, flexShrink: { sm: 0 }, backgroundColor: 'primary'}}
+        sx={{ 
+          display: { xs: "none", sm: "block" }, 
+          width: {sm: drawerWidth}, 
+          flexShrink: { sm: 0 }, 
+          backgroundColor: 'primary'
+        }}
     >
         <Drawer
             variant="permanent"

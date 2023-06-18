@@ -5,7 +5,7 @@ export const useTravel = () => {
     const navigate = useNavigate();
 
     const navigateForward = (name) => {
-        navigate(`/proyect/${name}`)
+        navigate(`/project/${name}`)
     }
 
     return {

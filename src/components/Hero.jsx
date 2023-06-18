@@ -1,27 +1,48 @@
 import { Grid, Typography } from "@mui/material"
-import HomeImage from '../../assets/homeImage.png';
 
 export const Hero = () => {
+
+    const windowWidth = window.innerWidth;
+    let imageWidth = '100%';
+
+    if(windowWidth > 900){
+        imageWidth = '70%'
+    }
+
+    const HomeImage = 'https://res.cloudinary.com/moralduke-cloud/image/upload/v1687124082/homeImage_knnlm1.png';
+
+
     return (
         <Grid container direction="row" alignItems='center' spacing={4}>
-            <Grid item xs={6}>
-                <Typography variant='h5' component='p' sx={{marginBottom: 1}}>
-                    Bienvenido a mí web!
+            <Grid container item xs={12} sm={6} direction="column" rowGap={1}>
+                <Typography variant='h4' component='p' 
+                    sx={{ 
+                        marginBottom: {xs: 2, sm: 1}, 
+                        textAlign:{ xs: "center", sm: "start"},
+                    }}
+                >
+                    Welcome to my web!
                 </Typography>
-                <Typography variant="h4" component='p' sx={{marginBottom: 1}}>
-                    Mí nombre es Alfonzo Morales soy un <Typography variant='inherit' component='span' color='primary.main'> 
-                    Frontend Developer
-                    </Typography> y aficionado por el diseño 3D 
+                <Typography variant="h3" component='p' 
+                    sx={{
+                        marginBottom: {xs: 2, sm: 1}, 
+                        textAlign:{ xs: "center", sm: "start"},
+                        fontSize: {xs: '28px', sm: '40px'}
+                    }}
+                >
+                    My name is Alfonzo Morales and I'm a <Typography variant='inherit' component='span' color='primary.main'> 
+                    Frontend React Developer
+                    </Typography> 
                 </Typography>
-                <Typography variant="body2" component='span'>
-                    Duis irure culpa nisi aliquip dolor commodo incididunt. 
-                    Velit excepteur amet sint sunt. Irure irure proident ad veniam. 
-                    Proident sit laborum aliqua velit ea esse magna excepteur nostrud enim.
+                <Typography variant="body1" component='span' sx={{ textAlign:{ xs: "center", sm: "start"} }}>
+                    I'm a React Developer who loves to work with different technologies such as 
+                    Redux, NodeJs, Material UI, Bootstrap, SASS among others, also I'm an
+                    enthusiast of the 3D modeling and someone who likes purple 
                 </Typography>
             </Grid>
 
-            <Grid item xs={6} sx={{ display: 'flex', flexGrow: 1}} alignItems='center' justifyContent='center'>
-                <img src={ HomeImage } height='430px'/>
+            <Grid item xs={12} sm={6} sx={{ display: 'flex', flexGrow: 1, ml: { xs: "0", sm: "24"}}} alignItems='center' justifyContent='center'>
+                <img width={imageWidth} src={ HomeImage } />
             </Grid>
         </Grid>
     )

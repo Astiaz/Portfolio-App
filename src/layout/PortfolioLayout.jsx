@@ -11,9 +11,11 @@ export const PortfolioLayout = ({children}) => {
 
         <Box
             component='main'
-            sx={{ flexGrow:1, p:3 }}
+            sx={{ flexGrow:1, p: {xs: 2, sm: 3}}}
+            width={{xs: '100vw'}}
+            // height={{sm: '100%'}}
         >
-            <Toolbar/>
+            <Toolbar sx={{ height: {xs: '8rem', sm: '1rem'}}}/>
 
             {children}
         </Box>

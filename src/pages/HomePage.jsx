@@ -12,7 +12,12 @@ export const HomePage = () => {
             spacing={0}
             direction="column"
             alignItems="center"
-            sx={{minHeight: `calc(100vh - 130px)`, backgroundColor: 'secondary.second', borderRadius: 3, paddingLeft: 4}}
+            sx={{
+              minHeight: `calc(100vh - 130px)`, 
+              backgroundColor: 'secondary.second', 
+              borderRadius: 3, 
+              paddingLeft: {xs: 0, sm: 4}
+            }}
         >
           
           <Hero />

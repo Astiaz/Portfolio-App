@@ -1,39 +1,58 @@
 import { Link as RouterLink, NavLink } from "react-router-dom";
 import { AppBar, Box, Button, Grid, Link, Toolbar, Typography } from "@mui/material";
 import { Download } from "@mui/icons-material";
+import { useAuthStore } from "../hooks/useAuthStore";
 
 export const NavBar = ({drawerWidth = 240}) => {
+
+    const { status } = useAuthStore();
 
   return (
     <AppBar position="fixed"
         sx={{
             width: {sm: `calc(100% - ${ drawerWidth }px)`},
-            ml: {sm: `${drawerWidth}px`},
-            backgroundColor: 'secondary.second',
+            // maxWidth: {xs: '100vw'},
+            left: 0,
+            ml: {xs: 0 ,sm: `${drawerWidth}px`},
+            backgroundColor: {xs: 'black', sm: 'secondary.second'},
             paddingTop: 2,
         }}
 
         elevation={0}
     >
         <Toolbar>
-            <Box sx={{display:'flex', flexGrow: 1}} justifyContent='space-between'>
-                <Grid container direction='row' alignItems='center' spacing={4} sx={{paddingLeft: 4}}>
-                    <Grid item sx={{fontSize:20}}>
-                        <Link color='tertiary.main' component={ NavLink } underline='none' to='/'
+            <Box sx={{display:'flex', flexGrow: 1, paddingLeft: 0}} justifyContent='space-between'>
+                <Grid container direction='row' alignItems='center' spacing={4} 
+                    sx={{ 
+                        paddingLeft: {xs: 0, sm: 4},
+                        marginBottom: {xs: 2, sm: 0}
+                    }}
+                >
+                    <Grid container item direction='row' columnGap={{xs: 4, sm: 3}}
+                        sx={{
+                            fontSize: 20,
+                            justifyContent: {xs: 'center', sm: 'start'},
+                        }}
+                    >
+                        <Grid container justifyContent="center" mb={1} sx={{xs:12 ,display: { sm: 'none'}}}>
+                            <Typography variant="h4" component="span" color="primary.second">Moralduke</Typography>
+                        </Grid>
+
+                        <Link component={ NavLink } underline='none' to='/'
                             sx={{
-                                mr: 2,
+                                color: {xs: 'white' , sm: 'tertiary.main'},
                                 '&:hover':{color:'primary.second'}, 
                                 '&.active':{
                                     color:'primary.main',
                                 },
                             }} 
-                            >
+                        >
                             Home
                         </Link>
 
-                        <Link color='tertiary.main' component={ NavLink } underline='none' to='/portfolio'
+                        <Link component={ NavLink } underline='none' to='/portfolio'
                             sx={{
-                                mr: 2, 
+                                color: {xs: 'white' , sm: 'tertiary.main'},
                                 '&:hover':{color:'primary.second'}, 
                                 '&.active':{
                                     color:'primary.main',
@@ -47,9 +66,9 @@ export const NavBar = ({drawerWidth = 240}) => {
                             About Me
                         </Link> */}
                         
-                        <Link color='tertiary.main' component={ NavLink } underline='none' to='/contact'
+                        <Link component={ NavLink } underline='none' to='/contact'
                             sx={{
-                                mr: 2, 
+                                color: {xs: 'white' , sm: 'tertiary.main'},
                                 '&:hover':{color:'primary.second'}, 
                                 '&.active':{
                                     color:'primary.main',
@@ -58,10 +77,31 @@ export const NavBar = ({drawerWidth = 240}) => {
                         >
                             Contact
                         </Link>
+                        
+                        {
+                            (status === 'authenticated')
+                            ? (
+                                <Link color='tertiary.main' component={ NavLink } underline='none' to='/upload'
+                                        sx={{
+                                            color: {xs: 'white' , sm: 'tertiary.main'},
+                                            '&:hover':{color:'primary.second'}, 
+                                            '&.active':{
+                                                color:'primary.main',
+                                            },
+                                        }}
+                                        
+                                    >
+                                        Upload
+                                    </Link>
+                                )
+
+                                : <> </>
+                        }
+                        
                     </Grid>
                 </Grid>
                 
-                <Grid item alignItems='center' sx={{paddingRight: 4}}>
+                <Grid item alignItems='center' sx={{ display: { xs: "none", sm: "block" }, paddingRight: 4 }}>
                     <Button variant="contained" sx={{ backgroundColor: `primary.second`}} startIcon={ <Download /> } >
                         <Typography sx={{ ml:1, width: {sm: `120px`}}}>Download CV</Typography>
                     </Button>
