@@ -66,7 +66,7 @@ export const NavBar = ({drawerWidth = 240}) => {
                             About Me
                         </Link> */}
                         
-                        <Link component={ NavLink } underline='none' to='/login'
+                        <Link component={ NavLink } underline='none' to='/contact'
                             sx={{
                                 color: {xs: 'white' , sm: 'tertiary.main'},
                                 '&:hover':{color:'primary.second'}, 
