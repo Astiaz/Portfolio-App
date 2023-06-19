@@ -1,7 +1,22 @@
+import { useRef } from "react";
+
 import { Box, Button, Grid, TextField, Typography } from "@mui/material"
 import { PortfolioLayout } from "../layout/PortfolioLayout"
 
+import sendEmail from "../helpers/sendEmail";
+import Swal from "sweetalert2";
+
 export const ContactPage = () => {
+  
+  const form = useRef();
+
+  const onSendEmail = (e) => {
+    e.preventDefault();
+
+    sendEmail(form.current);
+    Swal.fire('Email Send', `Thanks for your email, I'm gonna contact you as soon as possible`, 'success');
+  };
+
   return (
     <PortfolioLayout>
         <Grid container
@@ -15,11 +30,14 @@ export const ContactPage = () => {
         >
           <Grid item xs={12} sm={5} container direction='column'>
             <Typography variant='h5' component='p' mb={2}>Do u like my work? <Typography variant='p' component='span' color='primary.main'>contact me!</Typography></Typography>
-            <TextField label='Name' variant='outlined' margin="dense"/>
-            <TextField label='Email' variant='outlined' margin="dense"/>
-            <TextField label='Message' variant='outlined' multiline rows={4} margin="dense"/>
-
-            <Button variant='contained' sx={{backgroundColor: 'primary.second', marginTop: 2}} size='small'>Submit</Button>
+            <form ref={form} onSubmit={onSendEmail}>
+              <Grid container direction="column">
+                <TextField label='Name' name="user_name" variant='outlined' margin="dense"/>
+                <TextField label='Email' name="user_email" variant='outlined' margin="dense"/>
+                <TextField label='Message' name="message" variant='outlined' multiline rows={4} margin="dense"/>
+                <Button type="submit" variant='contained' sx={{backgroundColor: 'primary.second', marginTop: 2}} size='small'>Submit</Button>
+              </Grid>
+            </form>
           </Grid>
 
           <Box
