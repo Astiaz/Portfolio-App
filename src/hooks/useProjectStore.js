@@ -82,6 +82,6 @@ export const useProjectStore = () => {
         startNewProject,
         startUploading,
         startUploadingFiles,
-        startGettingProjects
+        startGettingProjects,
     }
 }

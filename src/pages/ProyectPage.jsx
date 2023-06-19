@@ -34,7 +34,7 @@ export const ProyectPage = () => {
                             <Grid container direction='row'>
                                 {
                                     technologies.map( tech => (
-                                            <Typography variant="h5" mr={2} color="secondary">
+                                            <Typography key={tech} variant="h5" mr={2} color="secondary">
                                                 {tech}
                                             </Typography> 
                                     ))

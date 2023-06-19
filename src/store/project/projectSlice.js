@@ -45,7 +45,7 @@ export const projectSlice = createSlice({
       setCompleteMessage: (state, {payload}) =>{ 
          state.completeMessage = payload;
          state.isSaving = false;
-      }
+      },
 
    }
 });

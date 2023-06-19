@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { HomePage, PortfolioPage, ContactPage, AboutPage, ProyectPage, UploadPage, LoginPage} from "../pages";
+import { HomePage, PortfolioPage, ContactPage, LoadingPage ,AboutPage, ProyectPage, UploadPage, LoginPage} from "../pages";
 import { useAuthStore } from "../hooks/useAuthStore";
 import { useEffect } from "react";
 import { useProjectStore } from "../hooks/useProjectStore";
@@ -17,7 +17,7 @@ export const AppRouter = () => {
 
   if( status === 'checking'){
     return (
-      <h3>Cargando...</h3>
+      <LoadingPage/>
     )
   }
 
