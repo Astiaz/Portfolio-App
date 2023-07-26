@@ -56,7 +56,7 @@ export const ContactPage = () => {
             color='white'
           >
             <Typography variant='h5' component='p' mb={2}>You can also download my CV</Typography>
-            <Button variant='contained' sx={{marginTop: 2}} size='medium'>Download CV</Button>
+            <Button component="a" target="_blank" href="https://drive.google.com/file/d/1---h8Kly7UMVWT-pl6Zc562lwe9atmMj/view?usp=sharing" download="CV_Moralduke" variant='contained' sx={{marginTop: 2}} size='medium'>Download CV</Button>
           </Box>
         </Grid>
     </PortfolioLayout>

@@ -6,7 +6,7 @@ export const Hero = () => {
     let imageWidth = '100%';
 
     if(windowWidth > 900){
-        imageWidth = '68%'
+        imageWidth = '63%'
     }
 
     const HomeImage = 'https://res.cloudinary.com/moralduke-cloud/image/upload/v1690405250/Room4Trasparent_ikm0jo.png';

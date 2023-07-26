@@ -102,7 +102,7 @@ export const NavBar = ({drawerWidth = 240}) => {
                 </Grid>
                 
                 <Grid item alignItems='center' sx={{ display: { xs: "none", sm: "block" }, paddingRight: 4 }}>
-                    <Button variant="contained" sx={{ backgroundColor: `primary.second`}} startIcon={ <Download /> } >
+                    <Button component="a" target="_blank" href="https://drive.google.com/file/d/1---h8Kly7UMVWT-pl6Zc562lwe9atmMj/view?usp=sharing" download="CV_Moralduke" variant="contained" sx={{ backgroundColor: `primary.second`}} startIcon={ <Download /> } >
                         <Typography sx={{ ml:1, width: {sm: `120px`}}}>Download CV</Typography>
                     </Button>
                 </Grid>
