@@ -9,7 +9,7 @@ export const Hero = () => {
         imageWidth = '68%'
     }
 
-    const HomeImage = 'https://res.cloudinary.com/moralduke-cloud/image/upload/v1687124082/homeImage_knnlm1.png';
+    const HomeImage = 'https://res.cloudinary.com/moralduke-cloud/image/upload/v1690405250/Room4Trasparent_ikm0jo.png';
 
 
     return (
